@@ -1,4 +1,4 @@
-name: Workflow to Run the Application
+name: Workflow to Build and Run the Application
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  run:
+  Build_Run:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +21,15 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+
+      - name: Build 
+        run: |
+          npm run build
 
       - name: Run Project in Background (dev server)
         run: |
