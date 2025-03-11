@@ -25,4 +25,4 @@ jobs:
       - name: Run Project in Background (dev server)
         run: |
           nohup npm run dev &
-          sleep 10 
+          sleep 15
