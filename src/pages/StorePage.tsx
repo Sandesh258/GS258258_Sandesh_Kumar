@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/store";
-import { deleteStore, reorderStores } from "../store/storeslice";
+import { deleteStore, reorderStores } from "../store/storeSlice";
 import { FaTrash, FaEdit, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { useState } from "react";
 import StoreForm from "../components/StoreForm";
