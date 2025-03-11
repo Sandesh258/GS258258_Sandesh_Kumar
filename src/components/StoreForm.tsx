@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addStore, updateStore } from "../store/storeslice";
+import { addStore, updateStore } from "../store/storeSlice";
 
 interface Store {
   id: string;
