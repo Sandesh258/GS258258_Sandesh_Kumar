@@ -1,4 +1,4 @@
-import logo from '../assets/Logo.svg';
+import logo from '../assets/logo.svg';
 
 const Navbar = () => (
   <nav className="navbar navbar-light bg-light px-3 w-100 d-flex justify-content-between align-items-center navcustom">
