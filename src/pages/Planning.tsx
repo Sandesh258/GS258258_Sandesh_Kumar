@@ -158,6 +158,7 @@ const Planning = () => {
         cellRendererFramework: (params: any) => (
           <input
             type="number"
+
             value={params.value || 0}
             onChange={(e) => {
               params.setValue(Number(e.target.value));
