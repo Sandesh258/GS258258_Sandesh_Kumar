@@ -4,7 +4,7 @@ import { ColDef } from "ag-grid-community";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
-// SKU type definition
+
 export interface SKU {
   id: string;
   name: string;
@@ -16,13 +16,13 @@ export interface SKU {
   salesUnits?: number;
 }
 
-// Sample SKU Data
+
 const skus: SKU[] = [
   { id: "SKU001", name: "Product A", price: 10, cost: 5 },
   { id: "SKU002", name: "Product B", price: 15, cost: 7 },
 ];
 
-// Initialize row data with SKU fields
+
 const PlanningGrid = () => {
   const [rowData, setRowData] = useState<SKU[]>(() => {
     return skus.map(sku => ({
@@ -33,7 +33,7 @@ const PlanningGrid = () => {
     }));
   });
 
-  // Calculate fields dynamically
+ 
   const calculateFields = (data: SKU) => {
     const updatedData = { ...data };
     const salesUnits = updatedData.salesUnits || 0; // Default to 0 if undefined
@@ -45,7 +45,7 @@ const PlanningGrid = () => {
     return updatedData;
   };
 
-  // Column definitions
+  
   const columnDefs: ColDef[] = useMemo(() => [
     { headerName: "ID", field: "id", editable: false },
     { headerName: "Name", field: "name", editable: true },
@@ -57,6 +57,7 @@ const PlanningGrid = () => {
       editable: true,
       cellRendererFramework: (params: any) => (
         <input
+
           type="number"
           value={params.value || 0}
           onChange={(e) => {

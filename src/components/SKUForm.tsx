@@ -25,7 +25,6 @@ const SKUForm: React.FC<SKUFormProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="flex items-center gap-4">
-        {/* SKU Name Input */}
         <input
           type="text"
           name="name"
@@ -36,7 +35,6 @@ const SKUForm: React.FC<SKUFormProps> = ({ onSubmit }) => {
           required
         />
 
-        {/* Cost Input */}
         <input
           type="number"
           name="cost"
@@ -47,7 +45,6 @@ const SKUForm: React.FC<SKUFormProps> = ({ onSubmit }) => {
           required
         />
 
-        {/* Price Input */}
         <input
           type="number"
           name="price"
@@ -58,7 +55,6 @@ const SKUForm: React.FC<SKUFormProps> = ({ onSubmit }) => {
           required
         />
 
-        {/* Add SKU Button */}
         <button type="submit" className="btn btn-success p-2 w-1/4 m-2">
           Add SKU
         </button>

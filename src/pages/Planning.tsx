@@ -6,21 +6,21 @@ import { ColDef } from "ag-grid-community";
 import { ModuleRegistry } from "@ag-grid-community/core";
 import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model";
 
-// Register the modules explicitly
+
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
-// Define SKU type
+
 export interface SKU {
   id: string;
   name: string;
   price: number;
   cost: number;
-  salesDollars?: number; // Optional properties
-  gmDollars?: number;    // Optional properties
-  gmPercentage?: number; // Optional properties
+  salesDollars?: number; 
+  gmDollars?: number;    
+  gmPercentage?: number; 
 }
 
-// Sample Data for Stores and SKUs
+
 const stores = [
   { id: "ST035", label: "San Francisco Bay Trends", city: "San Francisco", state: "CA" },
   { id: "ST046", label: "Phoenix Sunwear", city: "Phoenix", state: "AZ" },
@@ -57,7 +57,7 @@ const skus: SKU[] = [
     { id: "SKU010", name: "Product J", price: 10, cost: 4 },
 ];
 
-// Helper function to generate weeks for a given month
+
 const generateWeeksForMonth = (month: number) => {
   const weeks: string[] = [];
   const startDate = new Date(2025, month, 1); // Start of the month
@@ -76,10 +76,10 @@ const generateWeeksForMonth = (month: number) => {
   return weeks;
 };
 
-// Define Row Data type to accommodate dynamic keys
+
 interface RowData {
   storeName: string;
-  [skuId: string]: number | string | undefined; // Dynamically indexed fields
+  [skuId: string]: number | string | undefined; 
 }
 
 const Planning = () => {
@@ -109,7 +109,7 @@ const Planning = () => {
       const skuId = sku.id;
       let salesUnits = data[skuId] as number;
 
-      // Ensure salesUnits are not NaN or undefined
+      
       if (isNaN(salesUnits)) salesUnits = 0;
 
       const salesDollars = salesUnits * sku.price;
@@ -138,11 +138,11 @@ const Planning = () => {
             value={params.value || 0}
             onChange={(e) => {
               params.setValue(Number(e.target.value));
-              // Trigger recalculation after sales units are updated
+              
               const updatedRowData = [...rowData];
               const updatedData = calculateFields({ ...params.data });
               updatedRowData[params.node.rowIndex] = updatedData;
-              setRowData(updatedRowData); // Update the row data state
+              setRowData(updatedRowData); 
             }}
           />
         ),

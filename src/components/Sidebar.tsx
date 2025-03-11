@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { FaStore, FaBoxes, FaCogs, FaChartBar } from "react-icons/fa"; 
+import { FaStore, FaBoxes, FaCogs, FaChartBar } from "react-icons/fa";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const Sidebar = () => {
           <FaBoxes className="me-2" /> SKUs
         </Link>
         <Link to="/planning" className={`nav-link text-white ${location.pathname === "/planning" ? "fw-bold" : ""}`}>
-          <FaCogs className="me-2" /> Planning
+          <FaCogs className="me-1.8" /> Planning
         </Link>
         <Link to="/chart" className={`nav-link text-white ${location.pathname === "/chart" ? "fw-bold" : ""}`}>
           <FaChartBar className="me-2" /> Chart

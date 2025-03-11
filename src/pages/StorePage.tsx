@@ -16,15 +16,15 @@ const StorePage = () => {
   const dispatch = useDispatch();
   const stores = useSelector((state: RootState) => state.store.stores);
 
-  // State for editing store
+  
   const [editingStore, setEditingStore] = useState<Store | null>(null);
 
-  // Handle delete
+  
   const handleDelete = (id: string) => {
     dispatch(deleteStore(id));
   };
 
-  // Handle reorder
+  
   const handleReorder = (fromIndex: number, toIndex: number) => {
     if (toIndex >= 0 && toIndex < stores.length) {
       dispatch(reorderStores({ fromIndex, toIndex }));
@@ -35,10 +35,10 @@ const StorePage = () => {
     <div className="container mt-4">
       <h2 className="mb-3">Stores</h2>
 
-      {/* Store Form */}
+      
       <StoreForm editingStore={editingStore} setEditingStore={setEditingStore} />
 
-      {/* Store Table */}
+      
       <table className="table table-bordered">
         <thead className="table-dark">
           <tr>

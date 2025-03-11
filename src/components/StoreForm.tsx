@@ -20,12 +20,12 @@ const StoreForm: React.FC<StoreFormProps> = ({ editingStore, setEditingStore }) 
     editingStore || { id: "", label: "", city: "", state: "" }
   );
 
-  // Handle input change
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle submit
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (editingStore) {
